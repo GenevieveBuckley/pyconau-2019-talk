@@ -5,17 +5,17 @@ import traceback
 
 def _exception_handler(error_type, error_value, error_traceback):
     """Log all uncaught exceptions at runtime with sys.excepthook"""
-    logging.critical("Uncaught exception {} {}".format(
+    logging.exception("Uncaught exception {} {}".format(
         str(error_type), str(error_value)))
     tb = traceback.format_exception(
         error_type, error_value, error_traceback)
     traceback_string = ''
     for ln in tb:
         traceback_string += ln
-    logging.critical(traceback_string)
+    logging.exception(traceback_string)
 
 
-def begin_log(log_filename='logfile.log', log_level=logging.DEBUG):
+def configure_logging(log_filename='logfile.log', log_level=logging.DEBUG):
     """Log to terminal & file including traceback of any uncaught exceptions"""
     # We use sys.excepthook to handle any uncaught exceptions
     sys.excepthook = _exception_handler
@@ -29,7 +29,7 @@ def begin_log(log_filename='logfile.log', log_level=logging.DEBUG):
 
 
 def main():
-    begin_log(log_filename='logfile_capturing_traceback.log')
+    configure_logging(log_filename='logfile_capturing_traceback.log')
     # Log some things...
     logging.debug("Debugging information logged.")
     logging.info("Useful information logged.")

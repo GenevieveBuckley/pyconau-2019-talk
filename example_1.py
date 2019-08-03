@@ -1,7 +1,7 @@
 import logging
 
 
-def begin_log(log_level=logging.DEBUG):
+def configure_logging(log_level=logging.DEBUG):
     """A basic logging setup."""
     logging.basicConfig(
         # display timestamp, logging level, and then the message
@@ -13,7 +13,7 @@ def begin_log(log_level=logging.DEBUG):
 
 
 def main():
-    begin_log()  # Try begin_log(log_level=logging.WARNING) & see what happens
+    configure_logging()  # Try begin_log(log_level=logging.WARNING) & see what happens
     # Log some things...
     logging.debug("Debugging information logged.")
     logging.info("Useful information logged.")

@@ -1,7 +1,7 @@
 import logging
 
 
-def begin_log(log_filename='logfile.log', log_level=logging.DEBUG):
+def configure_logging(log_filename='logfile.log', log_level=logging.DEBUG):
     """Log to the terminal and to file simultaneously."""
     logging.basicConfig(
         format="%(asctime)s %(levelname)s %(message)s",
@@ -18,7 +18,7 @@ def main():
     # Try begin_log(log_level=logging.WARNING) and see what happens
     # Try begin_log(log_filename='my_custom_log_file.log')
     # You may find it useful to include a timestamp string in the log filename
-    begin_log()
+    configure_logging()
     # Log some things...
     logging.debug("Debugging information logged.")
     logging.info("Useful information logged.")
