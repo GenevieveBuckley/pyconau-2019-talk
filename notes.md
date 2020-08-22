@@ -42,7 +42,7 @@ From the jupyter notebook interface, click 'File' > 'Download As' > 'slides (.sl
 If you want to set up github pages to automatically point to this html file:
 
 1. create a `docs/` directory in your repository,
-2. Rename the file from `presentation.slides.html` to `inde.html`
+2. Rename the file from `presentation.slides.html` to `index.html`
 3. Put `index.html` inside the `docs/` folder and commit it to git
 4. In the settings of your repository, enable github pages from `docs/`
 
